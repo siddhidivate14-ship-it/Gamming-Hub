@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+  --primary: #ff4b5c;
+  --secondary: #00c9ff;
+  --dark: #0b132b;
+  --light: #f9f9f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #1a1a2e, #16213e);
+  color: var(--light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--light);
+  margin: 0 12px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 120px 10%;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: var(--secondary);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* FEATURED GAMES */
+.featured {
+  padding: 60px 10%;
+  text-align: center;
+  background: #111727;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: #1e2a47;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px var(--secondary);
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game-card h3 {
+  padding: 15px;
+  color: var(--light);
+}
+
+/* FOOTER */
+footer {
+  background: #0b132b;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+/* ABOUT PAGE STYLES */
+.about-hero {
+  text-align: center;
+  padding: 120px 10%;
+  background: radial-gradient(circle at center, #16213e 0%, #0f2027 100%);
+}
+
+.glow-text {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--secondary);
+  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+  animation: glowPulse 2s infinite alternate;
+}
+
+.glow-text span {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px var(--secondary); }
+  to { text-shadow: 0 0 30px var(--secondary), 0 0 60px var(--primary); }
+}
+
+.about-hero p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+}
+
+/* Info Cards */
+.about-content {
+  padding: 60px 10%;
+  background: #111727;
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #1e2a47, #16213e);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: all 0.4s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 30px var(--secondary);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  color: #ccc;
+  line-height: 1.6;
+}
+/* 🎮 GAMES PAGE */
+.games-hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: radial-gradient(circle at center, #11122b 0%, #09091b 100%);
+}
+
+.games-hero h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.games-hero p {
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+#gameSearch {
+  width: 60%;
+  max-width: 400px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  text-align: center;
+  background: #1b1b33;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* 🕹️ GAME GRID */
+.games-grid {
+  padding: 70px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.game-card {
+  background: linear-gradient(135deg, #1a1a3b, #0d0d1f);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px var(--secondary);
+}
+
+.game-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--secondary);
+}
+
+.game-card h3 {
+  color: var(--primary);
+  margin: 15px 0 5px;
+}
+
+.game-card p {
+  color: #bbb;
+  padding: 0 10px 20px;
+}
+/* 🗓️ EVENTS PAGE */
+.events-hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: linear-gradient(180deg, #0b0b1a, #16163a);
+  color: #fff;
+}
+
+.events-hero h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  text-shadow: 0 0 25px var(--secondary);
+}
+
+.events-hero p {
+  color: #ccc;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* 📅 Timeline section */
+.timeline {
+  position: relative;
+  padding: 80px 10%;
+  background: #101028;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(var(--primary), var(--secondary));
+  transform: translateX(-50%);
+}
+
+.event-card {
+  position: relative;
+  background: linear-gradient(135deg, #1e1e3a, #0d0d1f);
+  color: #fff;
+  width: 45%;
+  padding: 25px;
+  margin: 40px 0;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.event-card:nth-child(odd) {
+  left: 0;
+}
+
+.event-card:nth-child(even) {
+  left: 55%;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px var(--secondary);
+}
+
+.event-date {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+  .event-card {
+    width: 100%;
+    left: 0 !important;
+    margin-left: 30px;
+  }
+}
+/* 💬 COMMUNITY PAGE */
+.community-hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: radial-gradient(circle at center, #0d0d22, #111134);
+  color: #fff;
+}
+
+.community-hero h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.community-hero p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.discord-btn {
+  background: #5865f2;
+  box-shadow: 0 0 25px #5865f2;
+}
+
+.discord-btn:hover {
+  background: #4752c4;
+  box-shadow: 0 0 35px #4752f2;
+}
+
+/* ⭐ MEMBER GRID */
+.community-members {
+  padding: 80px 10%;
+  background: #0f0f25;
+  text-align: center;
+}
+
+.community-members h2 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 40px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.member-card {
+  background: linear-gradient(135deg, #1a1a3b, #0d0d1f);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 30px var(--secondary);
+}
+
+.member-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.member-card h3 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+/* 🌐 SOCIAL ICONS */
+.community-socials {
+  text-align: center;
+  background: #101028;
+  padding: 80px 10%;
+}
+
+.community-socials h2 {
+  color: var(--secondary);
+  margin-bottom: 30px;
+}
+
+.social-icons a img {
+  width: 60px;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px var(--primary));
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 20px var(--secondary));
+}
+/* 🖼️ GALLERY PAGE */
+.gallery-hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: radial-gradient(circle at center, #0d0d22, #101040);
+  color: #fff;
+}
+
+.gallery-hero h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.gallery-hero p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px 10%;
+  background: #0f0f25;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--secondary);
+}
+
+/* 🔍 Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border: 3px solid var(--secondary);
+  border-radius: 15px;
+  box-shadow: 0 0 30px var(--secondary);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 30px; right: 50px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lightbox .close:hover {
+  color: var(--secondary);
+}
+/* 📬 CONTACT PAGE */
+.contact-hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: radial-gradient(circle at center, #0d0d22, #111134);
+  color: #fff;
+}
+
+.contact-hero h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 10%;
+  background: #0f0f25;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #1b1b33;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px var(--secondary);
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--primary);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--secondary);
+  box-shadow: 0 0 30px var(--secondary);
+}
